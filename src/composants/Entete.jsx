@@ -16,7 +16,7 @@ export default function Entete() {
           <div className="navigation"> 
             <ul>
                 <li><img src="./images/Logo.png" className="logo"/></li>
-                <li><NavLink to="/" activeClassName="navActive" exact><p className='liNorm'>Accueil</p></NavLink></li>
+                <li><NavLink to="/Portfolio" activeClassName="navActive" exact><p className='liNorm'>Accueil</p></NavLink></li>
                 <li><NavLink to="/realisations" activeClassName="navActive"><p className='liNorm'>Réalisations</p></NavLink></li>
                 <li><NavLink to="/aPropos" activeClassName="navActive"><p className='liNorm'>À propos</p></NavLink></li>
                 <li><NavLink to="/meContacter" activeClassName="navActive"><p className='liNorm'>Me contacter</p></NavLink></li>

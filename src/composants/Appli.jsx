@@ -20,7 +20,7 @@ export default function Appli() {
         <Grid item xs={6}>
           <section className="contenu-principal">
             <Switch>
-            <BrowserRouter path="/" exact><Accueil/></BrowserRouter>
+            <BrowserRouter path="/Portfolio" exact><Accueil/></BrowserRouter>
             <BrowserRouter path="/realisations" exact>
               <ListeRea/>
             </BrowserRouter>
@@ -30,7 +30,7 @@ export default function Appli() {
           </section>
         </Grid>
         <Switch>
-            <BrowserRouter path={["/", "/aPropos", "/meContacter"]} exact>
+            <BrowserRouter path={["/Portfolio", "/aPropos", "/meContacter"]} exact>
                 <Grid item xs={2}>
                   <section className="sideShow">
                     <h1>Meilleur projets!</h1>
