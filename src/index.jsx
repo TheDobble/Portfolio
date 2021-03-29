@@ -8,7 +8,7 @@ const baseName = (window.location.href.search(/github\.io/i) !== -1) ? "/Portfol
 ReactDOM.render(
   <React.StrictMode >
     <Router basename= {baseName}>
-    <Appli />
+    <Appli basename= {baseName}/>
     </Router>
   </React.StrictMode>,
   document.getElementById('racine')

@@ -20,17 +20,17 @@ export default function Appli() {
         <Grid item xs={6}>
           <section className="contenu-principal">
             <Switch>
-            <BrowserRouter path="/Portfolio" exact><Accueil/></BrowserRouter>
-            <BrowserRouter path="/realisations" exact>
+            <BrowserRouter basename= {baseName} path="/Portfolio" exact><Accueil/></BrowserRouter>
+            <BrowserRouter basename= {baseName} path="/realisations" exact>
               <ListeRea/>
             </BrowserRouter>
-            <BrowserRouter path="/aPropos" exact><Apropos/></BrowserRouter>
-            <BrowserRouter path="/meContacter" exact><MeContacter/></BrowserRouter>
+            <BrowserRouter basename= {baseName} path="/aPropos" exact><Apropos/></BrowserRouter>
+            <BrowserRouter basename= {baseName} ath="/meContacter" exact><MeContacter/></BrowserRouter>
           </Switch>
           </section>
         </Grid>
         <Switch>
-            <BrowserRouter path={["/Portfolio", "/aPropos", "/meContacter"]} exact>
+            <BrowserRouter basename= {baseName} path={["/Portfolio", "/aPropos", "/meContacter"]} exact>
                 <Grid item xs={2}>
                   <section className="sideShow">
                     <h1>Meilleur projets!</h1>
