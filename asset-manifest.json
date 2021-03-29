@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.a4c0995e.chunk.css",
-    "main.js": "/Portfolio/static/js/main.d6521746.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.d6521746.chunk.js.map",
+    "main.js": "/Portfolio/static/js/main.7a8f0e45.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.7a8f0e45.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.fb9ef40d.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.fb9ef40d.js.map",
     "static/css/2.4ce9e501.chunk.css": "/Portfolio/static/css/2.4ce9e501.chunk.css",
@@ -12,13 +12,14 @@
     "static/css/2.4ce9e501.chunk.css.map": "/Portfolio/static/css/2.4ce9e501.chunk.css.map",
     "static/css/main.a4c0995e.chunk.css.map": "/Portfolio/static/css/main.a4c0995e.chunk.css.map",
     "static/js/2.6c863f95.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.6c863f95.chunk.js.LICENSE.txt",
-    "static/media/Appli.scss": "/Portfolio/static/media/Bckgrnd_Neutre.b336b269.jpg"
+    "static/media/Appli.scss": "/Portfolio/static/media/Bckgrnd_Neutre.b336b269.jpg",
+    "static/media/Logo.ecc3c9ef.png": "/Portfolio/static/media/Logo.ecc3c9ef.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fb9ef40d.js",
     "static/css/2.4ce9e501.chunk.css",
     "static/js/2.6c863f95.chunk.js",
     "static/css/main.a4c0995e.chunk.css",
-    "static/js/main.d6521746.chunk.js"
+    "static/js/main.7a8f0e45.chunk.js"
   ]
 }
