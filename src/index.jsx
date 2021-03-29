@@ -7,7 +7,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 const baseName = (window.location.href.search(/github\.io/i) !== -1) ? "/Portfolio" : "";
 ReactDOM.render(
   <React.StrictMode >
-    <Router>
+    <Router basename= {baseName}>
     <Appli />
     </Router>
   </React.StrictMode>,
