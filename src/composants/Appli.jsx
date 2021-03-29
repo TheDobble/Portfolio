@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import {Switch, BrowserRouter} from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Logo from './images/Logo.png';
+import Logo from '../images/Logo.png';
 export default function Appli({baseName}) {
 
   return (
