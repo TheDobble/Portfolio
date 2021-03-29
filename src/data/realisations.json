@@ -14,7 +14,7 @@
     },
 
       {
-        "id" : "TDI.gif",
+        "id" : "Dietetique.png",
         "nom" : "Fonction de recherche",
         "details": "Une fonction de recherche qui fouille une base de données chargées selon l'information entrée par l'utilisateur",
         "techs" : "jQuery"
