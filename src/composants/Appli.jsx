@@ -40,13 +40,13 @@ export default function Appli({baseName}) {
                           showStatus={false} showThumbs={false} showIndicators ={false}>
 
                         <div className="CarouselContainer">
-                            <img src="images/SlimeyEats.png" />
+                            <img src="Portfolio/images/SlimeyEats.png" />
                         </div>
                         <div>
-                            <img src="images/Cadenas.png"/>
+                            <img src="Portfolio/images/Cadenas.png"/>
                         </div>
                         <div>
-                            <img src="images/Dietetique.png" />
+                            <img src="Portfolio/images/Dietetique.png" />
                         </div>
                     </Carousel>
                     </section>
