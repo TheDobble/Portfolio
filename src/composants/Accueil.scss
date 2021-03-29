@@ -1,31 +1,18 @@
-.Accueil {
-  margin: 50px auto;
-  text-align: center;
-  
-  .logo {
-    display: block;
-    height: 170px;
-    color: #ea9100;
-    background: url(../images/signets-logo.png);
-    background-size: auto 170px;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 190px;
-    margin-bottom: 80px;
-    font-weight: 300;
-    font-size: 2.4em;
-    
-    span {
-      font-size: 0.5em;
-      font-weight: 400;
-    }
-  }
-  
-  .amorce {
-    font-weight: 300;
-    margin-bottom: 15px;
-  }
-  .connexion-etiquette {
-    font-size: 1.1rem;
-  }
+.acceuil_contenu{
+  background: linear-gradient(0deg, rgba(69,69,69,1) 0%, rgba(153,153,153,1) 100%);
+  border-radius: 20px 20px 20px 20px;
+  padding: 2%;
 }
+
+
+.contenu{
+  font-size: 2em;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    &>p{
+      margin-bottom: 10%;
+      font-size: .8em;
+    }
+
+}
+

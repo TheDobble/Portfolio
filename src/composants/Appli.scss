@@ -1,11 +1,22 @@
-.Appli {
-  .ajoutRessource {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #333;
-    &:hover {
-      background-color: #444;
-    }
+body{
+  background-image: url("../images/Bckgrnd_Neutre.jpg");
+}
+
+.Appli{
+  margin-top: 2%;
+}
+
+.CarouselContainer{
+  &>img{
+    width: 30%;
   }
+}
+
+.sideShow{
+  background: linear-gradient(0deg, rgba(69,69,69,1) 0%, rgba(153,153,153,1) 100%);
+  border-radius: 20px 20px 20px 20px;
+  padding: 2%;
+  color: white;
+  text-align: center;
+  font-family: 'Anton';
 }

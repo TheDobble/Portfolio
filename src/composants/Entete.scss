@@ -1,4 +1,74 @@
-.Entete {
+.logo{
+   margin-bottom: 2%;
+}
+
+.liNorm {
+  margin: 0px 40px 40px 60px;
+ font-size: 48px;
+ //padding: 11px 16px;
+ background: linear-gradient(to right, white 50%, rgba(255, 0, 0, 0) 50%);
+ background-size: 200% 100%;
+ background-position:right bottom;
+ transition:background-position 0.5s ease;
+ border-radius: 20px 20px 20px 20px;
+
+}
+
+.navigation{
+  text-align: center;
+  grid-area: 2/1/6/4;
+  background-color: #999999;
+  border-radius: 20px 20px 20px 20px;
+  background: rgb(69,69,69);
+  background: linear-gradient(0deg, rgba(69,69,69,1) 0%, rgba(153,153,153,1) 100%);
+  margin: 5%;
+}
+.navigation>ul{
+  list-style-type: none;
+  margin-top: 40px;
+  padding: 0px;
+  
+}
+
+.logo{
+  padding-top: 5px;
+  width: 140px;
+  height: 140px;
+}
+
+.navigation p:hover {
+  background-position:left bottom;
+}
+
+a:link{
+  text-decoration: none;
+  color: black;
+}
+
+a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.menuActif{
+  background: rgba(0,0,0,1);
+  &>a{
+    color: white; 
+  }    
+}
+
+.navActive:visited{
+  color: white; 
+  font-size: 62px;
+}
+.navActive{
+    &>p{
+      background: rgba(0,0,0,1);
+      border-radius: 20px 20px 20px 20px;
+    }
+    
+}
+/*.Entete {
   background-color: #000;
   color: white;
   display: flex;
@@ -31,4 +101,4 @@
       height: 35px;
     }
   }
-}
+}*/

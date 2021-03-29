@@ -1,87 +1,58 @@
 import './Appli.scss';
 import Entete from './Entete';
-import ListeDossiers from './ListeDossiers';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 import Accueil from './Accueil';
+import Apropos from './Apropos';
+import MeContacter from './meContacter';
+import ListeRea from './ListeRea';
 import { useEffect, useState } from 'react';
-import firebase from 'firebase/app';
-import {firestore} from '../firebase';
-import AjouterDossier from './AjouterDossier';
-
+import Grid from '@material-ui/core/Grid';
+import {Switch, BrowserRouter} from 'react-router-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 export default function Appli() {
-  // État de l'utilisateur
-  const [utilisateur, setUtilisateur] = useState(null);
-
-  // État des dossiers
-  const etatDossiers = useState([]);
-  const [dossiers, setDossiers] = etatDossiers;
-
-  // État de la boîte de dialogue "Ajout Dossier"
-  const [ouvert, setOuvert] = useState(false);
-
-  // Valider la connexion utilisateur
-  useEffect(
-    () => {
-     firebase.auth().onAuthStateChanged(
-       util => {
-        setUtilisateur(util);
-        // Créer le profil de l'utilisateur dans Firestore si util n'est pas NULL
-        if(util) {
-          firestore.collection('utilisateurs-ex4').doc(util.uid).set({
-            nom: util.displayName, 
-            courriel: util.email, 
-            datecompte: firebase.firestore.FieldValue.serverTimestamp()
-          }, {merge: true});
-        }
-      }
-     );
-    }, []
-  );
-  
-  // Ajouter un dossier
-  function gererAjout(nom, couverture, couleur) {
-    // Objet à ajouter dans la collection "dossiers" sur Firestore
-    const objDossier = {
-      nom: nom,
-      couverture: couverture,
-      couleur: couleur,
-      datemodif: firebase.firestore.FieldValue.serverTimestamp(),
-      signets: []
-    };
-    // Ajout de l'objet
-    firestore.collection('utilisateurs-ex4').doc(utilisateur.uid).collection('dossiers').add(objDossier).then(
-      refDoc => {
-        // Puis on utilise la référence retournée pour chercher le détail du dossier
-        refDoc.get().then(
-          // Et on modifie l'état des dossiers en joignant ce dernier pour forcer un "rerender" du composant "ListeDossiers"
-          doc => setDossiers([...dossiers, {...doc.data(), id: doc.id}])
-        );
-        // On oublie pas de fermer la boîte de dialogue
-        setOuvert(false);
-      }
-    )
-  }
 
   return (
     <div className="Appli">
-      {
-        // Un utilisateur est connecté ?
-        utilisateur ?
-          <>
-            <Entete utilisateur={utilisateur} />
-            <section className="contenu-principal">
-              <ListeDossiers utilisateur={utilisateur} etatDossiers={etatDossiers} />
-              <AjouterDossier ouvert={ouvert} setOuvert={setOuvert} gererAjout={gererAjout} />
-              <Fab onClick={() => setOuvert(true)} className="ajoutRessource" color="primary" aria-label="Ajouter dossier">
-                <AddIcon />
-              </Fab>
-            </section>
-          </>
-        // Sinon :
-        :
-          <Accueil />
-      }
+      <Grid container justify="space-evenly" alignItems="flex-start" spacing={0}>
+        <Grid container item xs={3} spacing={0}>
+            <Entete/>
+        </Grid>
+        <Grid item xs={6}>
+          <section className="contenu-principal">
+            <Switch>
+            <BrowserRouter path="/" exact><Accueil/></BrowserRouter>
+            <BrowserRouter path="/realisations" exact>
+              <ListeRea/>
+            </BrowserRouter>
+            <BrowserRouter path="/aPropos" exact><Apropos/></BrowserRouter>
+            <BrowserRouter path="/meContacter" exact><MeContacter/></BrowserRouter>
+          </Switch>
+          </section>
+        </Grid>
+        <Switch>
+            <BrowserRouter path={["/", "/aPropos", "/meContacter"]} exact>
+                <Grid item xs={2}>
+                  <section className="sideShow">
+                    <h1>Meilleur projets!</h1>
+                <Carousel axis ={'vertical'} autoPlay={true} interval={3000} 
+                          infiniteLoop={true} showArrows={false} width={'100%'} 
+                          showStatus={false} showThumbs={false} showIndicators ={false}>
+
+                        <div className="CarouselContainer">
+                            <img src="images/SlimeyEats.png" />
+                        </div>
+                        <div>
+                            <img src="images/Cadenas.png"/>
+                        </div>
+                        <div>
+                            <img src="images/Dietetique.png" />
+                        </div>
+                    </Carousel>
+                    </section>
+                </Grid>
+            </BrowserRouter>
+        </Switch>
+      </Grid>      
     </div>
   );
 }
